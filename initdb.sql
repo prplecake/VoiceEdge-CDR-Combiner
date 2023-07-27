@@ -1,0 +1,22 @@
+CREATE TABLE IF NOT EXISTS call_detail_record (
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    account INTEGER,
+    btn TEXT,
+    from_number TEXT,
+    from_place TEXT,
+    dialed_number TEXT,
+    to_number TEXT,
+    to_place TEXT,
+    pbx_id INTEGER,
+    account_code TEXT,
+    date_and_time TEXT,
+    type_of_call TEXT,
+    cdr_type TEXT,
+    duration INTEGER,
+    charge INTEGER,
+    rate_center TEXT,
+    da_ind TEXT,
+    oa_ind TEXT,
+    tf_payphone_indr TEXT,
+    land_mobile_indr TEXT
+)

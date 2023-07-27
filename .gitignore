@@ -1,0 +1,9 @@
+processed
+extracted
+venv
+bak
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
