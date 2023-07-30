@@ -1,7 +1,7 @@
 processed
 extracted
-venv
 bak
+*.zip
 
 # Databases
 *.db
