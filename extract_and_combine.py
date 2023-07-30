@@ -14,7 +14,7 @@ def bp():
 
 def init_db():
     cursor = connection.cursor()
-    with open('initdb.sql', 'r') as initsql:
+    with open("initdb.sql", "r") as initsql:
         sql = initsql.read()
         cursor.executescript(sql)
 
@@ -24,7 +24,7 @@ def close_db():
 
 
 def unzip_without_overwrite(src_path, dst_dir):
-    with zipfile.ZipFile(src_path, 'r') as zf:
+    with zipfile.ZipFile(src_path, "r") as zf:
         members = zf.infolist()
         for idx, member in enumerate(members):
             print(f"[{idx+1}/{len(members)}] {member.filename}")
@@ -64,7 +64,7 @@ def main():
     if not os.path.exists(processed_dir):
         os.mkdir(processed_dir)
 
-    zip_files = [x for x in os.listdir() if x.endswith('.zip')]
+    zip_files = [x for x in os.listdir() if x.endswith(".zip")]
     for idx, zipFile in enumerate(zip_files):
         print(f"[{idx+1}/{len(zip_files)}] Unzipping {zipFile}")
         unzip_without_overwrite(
@@ -77,7 +77,7 @@ def main():
                  if x.endswith(".csv")]
     for csvFile in csv_files:
         print(csvFile)
-        with open(csvFile, 'r') as in_file:
+        with open(csvFile, "r") as in_file:
             reader = csv.reader(in_file)
             try:
                 for row in reader:
@@ -92,5 +92,5 @@ def main():
         shutil.move(csvFile, processed_dir)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
